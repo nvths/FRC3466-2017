@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ClimbRope extends Command {
 
     public ClimbRope() {
-        // Use requires() here to declare subsystem dependencies
+        // Use requires() here to declare subsystem dependencies TEST
         requires(Robot.captainHook);
         //Starts timer for 10 seconds
         setTimeout(10);
