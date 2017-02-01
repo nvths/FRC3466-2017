@@ -35,7 +35,7 @@ public class RobotMap {
 
     public static Gyro gyro = new ADXRS450_Gyro();
 	public static Accelerometer accelerometer = new ADXL362(Accelerometer.Range.k4G);
-	//public static Accelerometer accelerometer = new BuiltInAccelerometer(Accelerometer.Range.k4G);
+	//public static Accelerometer accelerometer = new BuiltInAccelerometer(Accelerometer.Range.k4G); TEST
 	public static double kp = 0.03;
 
 }
