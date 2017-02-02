@@ -1,3 +1,5 @@
+
+
 package org.usfirst.frc.team3466.robot;
 
 import edu.wpi.first.wpilibj.ADXL362;
@@ -17,6 +19,11 @@ public class RobotMap {
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
 	public static int joystick = 0;
+    public static int pitcherBtn = 1;
+    public static int agitatorBtn = 2;
+    public static int macaroniStickBtn = 3;
+    public static int captainHookBtn = 4;
+    public static int dumpBtn = 5;	
 	
     public static int leftMotorFrontPort = 1;
     public static int leftMotorRearPort = 2;
