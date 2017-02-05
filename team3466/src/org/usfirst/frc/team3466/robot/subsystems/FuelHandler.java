@@ -28,7 +28,7 @@ public class FuelHandler extends Subsystem {
     public void agitate(){
     	agitatorMotor.set(1);
     }
-    public void reveseAgitator(){
+    public void reverseAgitator(){
     	agitatorMotor.set(-1);
     }
     public void pitch(){
