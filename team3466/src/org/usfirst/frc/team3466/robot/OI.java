@@ -8,8 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team3466.robot.commands.ClimbRope;
 import org.usfirst.frc.team3466.robot.commands.FuelAgitate;
 import org.usfirst.frc.team3466.robot.commands.FuelDump;
+import org.usfirst.frc.team3466.robot.commands.FuelReverseAgitate;
 import org.usfirst.frc.team3466.robot.commands.FuelShoot;
 import org.usfirst.frc.team3466.robot.commands.FuelUp;
+import org.usfirst.frc.team3466.robot.commands.FuelUpReverse;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -20,20 +22,24 @@ public class OI {
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
-    public  Joystick stick = new Joystick(RobotMap.joystick);
-    public  Button pitcherBtn = new JoystickButton(stick, RobotMap.pitcherBtn);
-    public  Button agitatorBtn = new JoystickButton(stick, RobotMap.agitatorBtn);
-    public  Button macaroniStickBtn = new JoystickButton(stick, RobotMap.macaroniStickBtn);
-    public  Button captainHookBtn = new JoystickButton(stick, RobotMap.captainHookBtn);
-    public  Button fuelDumperBtn = new JoystickButton(stick, RobotMap.dumpBtn);
+    public Joystick stick = new Joystick(RobotMap.joystick);
+    public Button pitcherBtn = new JoystickButton(stick, RobotMap.pitcherBtn);
+    public Button agitatorBtn = new JoystickButton(stick, RobotMap.agitatorBtn);
+    public Button reverseAgitatorBtn = new JoystickButton(stick, RobotMap.reverseAgitatorBtn);
+    public Button fuelUpBtn = new JoystickButton(stick, RobotMap.fuelUpBtn);
+    public Button fuelUpReverseBtn = new JoystickButton(stick, RobotMap.fuelUpReverseBtn);
+    public Button climbBtn = new JoystickButton(stick, RobotMap.climbBtn);
+    public Button fuelDumperBtn = new JoystickButton(stick, RobotMap.dumpBtn);
     
 
 	public OI(){
 		
 		pitcherBtn.whenPressed(new FuelShoot());
 		agitatorBtn.whenPressed(new FuelAgitate());
-		macaroniStickBtn.whenPressed(new FuelUp());		
-		captainHookBtn.whenPressed(new ClimbRope());
+		reverseAgitatorBtn.whenPressed(new FuelReverseAgitate());
+		fuelUpBtn.whenPressed(new FuelUp());
+		fuelUpReverseBtn.whenPressed(new FuelUpReverse());
+		climbBtn.whenPressed(new ClimbRope());
 		fuelDumperBtn.whenPressed(new FuelDump());
 	}
     

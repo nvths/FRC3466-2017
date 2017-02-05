@@ -21,9 +21,11 @@ public class RobotMap {
 	public static int joystick = 0;
     public static int pitcherBtn = 1;
     public static int agitatorBtn = 2;
-    public static int macaroniStickBtn = 3;
-    public static int captainHookBtn = 4;
-    public static int dumpBtn = 5;	
+    public static int fuelUpBtn = 3;
+    public static int climbBtn = 4;
+    public static int dumpBtn = 5;
+    public static int fuelUpReverseBtn = 6;
+    public static int reverseAgitatorBtn = 7;
 	
     public static int leftMotorFrontPort = 1;
     public static int leftMotorRearPort = 2;
