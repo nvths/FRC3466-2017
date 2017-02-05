@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3466.robot.commands;
 
+import org.usfirst.frc.team3466.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -10,10 +12,13 @@ public class FuelUp extends Command {
     public FuelUp() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	requires(Robot.fuelHandler);
+        setTimeout(3);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.fuelHandler.macaroniStick();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -22,7 +27,7 @@ public class FuelUp extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	return isTimedOut();
     }
 
     // Called once after isFinished returns true

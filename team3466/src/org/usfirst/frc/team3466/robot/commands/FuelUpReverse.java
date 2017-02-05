@@ -7,18 +7,19 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class FuelReverseAgitate extends Command {
+public class FuelUpReverse extends Command {
 
-    public FuelReverseAgitate() {
+    public FuelUpReverse() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.fuelHandler);
         setTimeout(3);
+
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.fuelHandler.reverseAgitator();
+    	Robot.fuelHandler.reverseMacaroniStick();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -28,6 +29,7 @@ public class FuelReverseAgitate extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	return isTimedOut();
+
     }
 
     // Called once after isFinished returns true

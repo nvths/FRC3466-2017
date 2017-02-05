@@ -37,7 +37,7 @@ public class FuelHandler extends Subsystem {
     public void macaroniStick(){
     	macaroniStickMotor.set(1);
     }
-    public void reveserMacaroniStick(){
+    public void reverseMacaroniStick(){
     	macaroniStickMotor.set(-1);
     }
     public void dump(){

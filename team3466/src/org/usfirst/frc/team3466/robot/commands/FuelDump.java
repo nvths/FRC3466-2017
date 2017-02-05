@@ -13,7 +13,6 @@ public class FuelDump extends Command {
         // Use requires() here to declare subsystem dependencies
     	requires(Robot.fuelHandler);
         setTimeout(10);
-
     }
 
     // Called just before this Command runs the first time
