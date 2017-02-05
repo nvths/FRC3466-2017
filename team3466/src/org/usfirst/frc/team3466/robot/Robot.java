@@ -49,9 +49,7 @@ public class Robot extends IterativeRobot {
 		RobotMap.gyro.calibrate();
 		
 		//Init camera
-        server = CameraServer.getInstance();
-        server.setQuality(100);
-        server.startAutomaticCapture("cam1");
+		CameraServer.getInstance().startAutomaticCapture();
   
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
