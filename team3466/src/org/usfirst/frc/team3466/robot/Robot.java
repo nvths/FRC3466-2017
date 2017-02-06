@@ -37,6 +37,14 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand;
     SendableChooser chooser;
     CameraServer server;
+    
+    boolean x;
+	boolean y;
+	boolean z;
+	Pixy pixy;
+	int count = 0;
+	final int halfBand = 3;
+	PixyController p;
        
     /**
      * This function is run when the robot is first started up and should be
@@ -55,6 +63,9 @@ public class Robot extends IterativeRobot {
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        
+        pixy = new Pixy();
+		p = new PixyController(pixy);
     }
 	
 	/**
@@ -95,6 +106,8 @@ public class Robot extends IterativeRobot {
     	
     	// schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
+        
+        pixy.pixyReset();
     }
 
     /**
@@ -102,6 +115,10 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        RobotMap.frontLeftMotor.set(-p.autoCenter());
+        RobotMap.rearLeftMotor.set(-p.autoCenter());
+		RobotMap.frontRightMotor.set(p.autoCenter());
+		RobotMap.rearRightMotor.set(p.autoCenter());
     }
 
     public void teleopInit() {
