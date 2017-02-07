@@ -15,13 +15,11 @@ public class PixyController {
 		pkt = null;
 		try{
 			pkt = pixy.readPacket(1);
-			System.out.println("x :" +pkt.X +" y :" +pkt.Y);
-			System.out.println("W :" +pkt.Width +" H :" +pkt.Height);
 		} catch (PixyException e){
 			e.printStackTrace();
 		}
 		try{
-			objRatio = pkt.Height/(pkt.Width == 0 ? 1 : pkt.Width);
+			objRatio = pkt.Height/pkt.Width;
 		}
 		catch (ArithmeticException a){
 			System.out.println("Object not being seen");

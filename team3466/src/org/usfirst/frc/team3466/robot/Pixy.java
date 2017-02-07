@@ -11,7 +11,7 @@ public class Pixy {
 	String print;
 
 	public Pixy() {
-		pixy = new SerialPort(19200, port);
+		pixy = new SerialPort(9600, port);
 		pixy.setReadBufferSize(14);
 		packets = new PixyPacket[7];
 		pExc = new PixyException(print);
@@ -33,6 +33,8 @@ public class Pixy {
 		} catch (RuntimeException e){
 			
 		}
+		System.out.println(rawData);
+		
 		if(rawData.length < 32){
 			return null;
 		}
@@ -67,6 +69,8 @@ public class Pixy {
 		
 		PixyPacket pkt = packets[Signature - 1];
 		packets[Signature - 1] = null;
+		System.out.println("x :" +pkt.X +" y :" +pkt.Y);
+		System.out.println("W :" +pkt.Width +" H :" +pkt.Height);
 		return pkt;
 	}
 } 
