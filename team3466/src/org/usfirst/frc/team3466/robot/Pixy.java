@@ -11,7 +11,7 @@ public class Pixy {
 	String print;
 
 	public Pixy() {
-		pixy = new SerialPort(19200, port);
+		//pixy = new DigitalInput(19200, port);
 		pixy.setReadBufferSize(14);
 		packets = new PixyPacket[7];
 		pExc = new PixyException(print);

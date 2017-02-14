@@ -135,7 +135,13 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-		robotDrive.arcadeDrive(-oi.stick.getY(), -oi.stick.getX(), true);
+    	double X = -oi.stick.getX();
+    	double Y = -oi.stick.getY();
+    	if (InverseDriveOn){
+    		X = -X;
+    		Y = -Y;
+    	}
+		robotDrive.arcadeDrive(Y, X, true);
         Scheduler.getInstance().run();
     }
     
