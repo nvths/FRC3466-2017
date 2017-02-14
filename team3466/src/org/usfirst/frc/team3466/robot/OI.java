@@ -12,6 +12,8 @@ import org.usfirst.frc.team3466.robot.commands.FuelReverseAgitate;
 import org.usfirst.frc.team3466.robot.commands.FuelShoot;
 import org.usfirst.frc.team3466.robot.commands.FuelUp;
 import org.usfirst.frc.team3466.robot.commands.FuelUpReverse;
+import org.usfirst.frc.team3466.robot.commands.InverseDrive;
+import org.usfirst.frc.team3466.robot.commands.InverseDriveOff;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -30,6 +32,7 @@ public class OI {
     public Button fuelUpReverseBtn = new JoystickButton(stick, RobotMap.fuelUpReverseBtn);
     public Button climbBtn = new JoystickButton(stick, RobotMap.climbBtn);
     public Button fuelDumperBtn = new JoystickButton(stick, RobotMap.dumpBtn);
+    public Button inverseDriveBtn = new JoystickButton(stick, RobotMap.inverseDriveBtn);
     
 
 	public OI(){
@@ -41,6 +44,8 @@ public class OI {
 		fuelUpReverseBtn.whenPressed(new FuelUpReverse());
 		climbBtn.whenPressed(new ClimbRope());
 		fuelDumperBtn.whenPressed(new FuelDump());
+		inverseDriveBtn.whenPressed(new InverseDrive());
+		inverseDriveBtn.whenReleased(new InverseDriveOff());
 	}
     
     // There are a few additional built in buttons you can use. Additionally,

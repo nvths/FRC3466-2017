@@ -32,19 +32,21 @@ public class Robot extends IterativeRobot {
 	public static final MacaroniStick macaroniStick = new MacaroniStick();
 	
 	public static OI oi;
+	
+	public static boolean InverseDriveOn = false;
 
 	public static RobotDrive robotDrive;
     Command autonomousCommand;
     SendableChooser chooser;
     CameraServer server;
     
-    boolean x;
-	boolean y;
-	boolean z;
-	Pixy pixy;
+    //boolean x;
+	//boolean y;
+	//boolean z;
+	//Pixy pixy;
 	int count = 0;
 	final int halfBand = 3;
-	PixyController p;
+	//PixyController p;
        
     /**
      * This function is run when the robot is first started up and should be
@@ -64,8 +66,8 @@ public class Robot extends IterativeRobot {
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
         
-        pixy = new Pixy();
-		p = new PixyController(pixy);
+      //  pixy = new Pixy();
+      //p = new PixyController(pixy);
     }
 	
 	/**
@@ -107,7 +109,7 @@ public class Robot extends IterativeRobot {
     	// schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
         
-        pixy.pixyReset();
+   //     pixy.pixyReset();
     }
 
     /**
@@ -115,10 +117,10 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
-        RobotMap.frontLeftMotor.set(-p.autoCenter());
-        RobotMap.rearLeftMotor.set(-p.autoCenter());
-		RobotMap.frontRightMotor.set(p.autoCenter());
-		RobotMap.rearRightMotor.set(p.autoCenter());
+     // RobotMap.frontLeftMotor.set(-p.autoCenter());
+    // RobotMap.rearLeftMotor.set(-p.autoCenter());
+	//RobotMap.frontRightMotor.set(p.autoCenter());
+	//RobotMap.rearRightMotor.set(p.autoCenter());
     }
 
     public void teleopInit() {

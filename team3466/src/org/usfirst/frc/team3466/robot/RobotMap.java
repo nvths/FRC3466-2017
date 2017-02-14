@@ -19,13 +19,14 @@ public class RobotMap {
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
 	public static int joystick = 0;
-    public static int pitcherBtn = 1;
-    public static int agitatorBtn = 2;
-    public static int fuelUpBtn = 3;
-    public static int climbBtn = 4;
-    public static int dumpBtn = 5;
-    public static int fuelUpReverseBtn = 6;
-    public static int reverseAgitatorBtn = 7;
+    public static int pitcherBtn = 2;
+    public static int agitatorBtn = 3;
+    public static int fuelUpBtn = 4;
+    public static int climbBtn = 5;
+    public static int dumpBtn = 6;
+    public static int fuelUpReverseBtn = 7;
+    public static int reverseAgitatorBtn = 8;
+    public static int inverseDriveBtn = 9;
 	
     public static int leftMotorFrontPort = 1;
     public static int leftMotorRearPort = 2;
