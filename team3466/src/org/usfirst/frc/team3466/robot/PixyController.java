@@ -1,23 +1,19 @@
 package org.usfirst.frc.team3466.robot;
-//NOTE: Pixy is offset 3 in to the right
+
+import org.usfirst.frc.team3466.robot.PixyADX;
 
 public class PixyController {
-	Pixy pixy;
+	PixyADX pixy;
 	PixyPacket pkt;
 	double error;
 	public final double ratio = 109/80;
 	double objRatio = 0;
-	public PixyController(Pixy p){
-		pixy = new Pixy();
+	public PixyController(PixyADX p){
+		pixy = new PixyADX();
 		pkt = new PixyPacket();
 	}
 	public double autoCenter(){
-		pkt = null;
-		try{
-			pkt = pixy.readPacket(1);
-		} catch (PixyException e){
-			e.printStackTrace();
-		}
+		pkt = pixy.readPacket();
 		try{
 			objRatio = pkt.Height/pkt.Width;
 		}

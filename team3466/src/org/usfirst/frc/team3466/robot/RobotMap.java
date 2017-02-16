@@ -42,6 +42,7 @@ public class RobotMap {
     public static Spark rearLeftMotor = new Spark(leftMotorRearPort);
     public static Spark frontRightMotor = new Spark(rightMotorFrontPort);
     public static Spark rearRightMotor = new Spark(rightMotorRearPort);
+    public static Victor captainHook = new Victor(captainHookPort);
 
     public static Gyro gyro = new ADXRS450_Gyro();
 	public static Accelerometer accelerometer = new ADXL362(Accelerometer.Range.k4G);

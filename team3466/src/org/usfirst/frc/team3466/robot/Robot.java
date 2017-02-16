@@ -43,10 +43,10 @@ public class Robot extends IterativeRobot {
     //boolean x;
 	//boolean y;
 	//boolean z;
-	//Pixy pixy;
+	PixyADX pixy;
 	int count = 0;
 	final int halfBand = 3;
-	//PixyController p;
+	PixyController p;
        
     /**
      * This function is run when the robot is first started up and should be
@@ -66,8 +66,8 @@ public class Robot extends IterativeRobot {
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
         
-      //  pixy = new Pixy();
-      //p = new PixyController(pixy);
+       pixy = new PixyADX();
+      p = new PixyController(pixy);
     }
 	
 	/**
